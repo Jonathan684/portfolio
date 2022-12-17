@@ -1,0 +1,49 @@
+{% extends 'layout.html'%}
+
+{%block content %}
+{%load static%}
+
+<header class="row ">
+    <div class="col-md-4">
+        <img src="{% static 'portfolio/imag3.jpg' %}" alt="">
+    </div>
+    <div class=" col-md-8 my-auto">
+        <h1>I am<strong> Jonathan Patiño</strong></h1>
+        <h3>I am Computer Engineer</h3>
+        <p>I am a computer engineering student. Studying the last subjects of the career.</p>
+        <a href="{% static 'portfolio/cv.pdf'%}" class="btn btn-primary btn-lg rounded-0 my-3">Dowload CV</a>
+    </div>
+</header>
+
+
+<div class="row my-4 text-center">
+
+    <h3>My Projects</h3>
+    <p>Here I show the projects I developed during my university studies.</p>
+
+
+    {% for project in projects%}
+
+    <div class="col-md-4 p-4" >
+        <div class="card bg-black card-project" >
+             <STYLE>A {text-decoration: none;
+                       color: white;} </STYLE>
+
+            <a    href="{% url 'report:report_detail' project.id %}">
+            <img src="{{project.image.url}}" alt="{{project.title}}" class="card-img-top" width="100" height="300">
+            <div class="card-body" >
+                <h2 >{{project.title}}</h2>
+                <p>{{project.description}}</p>
+                {%if project.url %}
+                <a href="{{project.url}}" class="btn btn-light rounded-0 btn-sm" target="_blank">{{project.url}}</a>
+
+               {%endif%}
+            </div>
+            </img>
+            </a>
+        </div>
+    </div>
+
+    {% endfor %}
+    {% endblock %}
+</div>

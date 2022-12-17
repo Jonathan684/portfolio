@@ -1,0 +1,52 @@
+
+{%extends 'layout.html'%}
+{%load static%}
+{%block content%}
+<!--
+<div class="text-center">
+    <h2>{{report.title}}</h2>
+    <h3 class="my-2 h5 text-muted">{{report.date|date:'F jS Y'}}</h3>
+    <img src="{{report.image.url}}" alt="{{report.title}}" class="img-fluid">
+    <div class="my-4">
+        <p>{{report.description|safe}}</p>
+    </div>
+
+</div>
+
+        <embed src="{% static 'portfolio/report1.pdf'%}" type="application/pdf" width="100%" />
+        -->
+        {% with "portfolio"|add:"{{report.description}}.pdf" as report_aux %}
+        <div>
+            <h2 class="title">{{report.title}}</h2>
+    <head>
+	    <style>
+	        * {
+	         margin:0;
+	         padding:0;
+	    }
+		.pdfview {
+			margin: auto;
+			display:block;
+			width:850px;
+			height:100vh;
+			border-radius:20px;
+			box-shadow:0 4px 8px 0 rgba(0,0,0,0.2)
+			,0 6px 20px 0 rgba(0,0,0,0.19);
+		    }
+		   .title{
+		       text-align:center;
+		       padding:20px;
+		       font-family :'Franklin Gothic Madium',
+		       'Arial Narrow', Arial,sans-serif;
+		   }
+
+	    </style>
+
+    </head>
+    <body>
+        <object class="pdfview" type="application/pdf" data="{% static 'portfolio/'%}{{report.description}}.pdf"></object>
+    </body>
+
+    </div>
+    {% endwith %}
+{%endblock%}
