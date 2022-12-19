@@ -130,3 +130,4 @@ MEDIA_ROOT = '/home/Jonathan684/mysite/media'
 MEDIA_URL = '/media/'
 STATIC_ROOT = '/home/Jonathan684/mysite/static'
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'static' ]
