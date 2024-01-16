@@ -23,8 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*ac@sgukaxkvt+6kr0y=84yuwrheeddc60v^_&v-aht#w#_kd9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+#DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['Jonathan684.pythonanywhere.com','*']
 
 
@@ -130,4 +130,4 @@ MEDIA_ROOT = '/home/Jonathan684/mysite/media'
 MEDIA_URL = '/media/'
 STATIC_ROOT = '/home/Jonathan684/mysite/static'
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static' ]
+#STATICFILES_DIRS = [BASE_DIR / 'static' ]
