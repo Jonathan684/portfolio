@@ -2,9 +2,47 @@
 {%load static%}
 {%block content%}
 
-{% with "portfolio"|add:"{{report.description}}.pdf" as report_aux %}
 <div>
 	<h2 class="title">{{report.title}}</h2>
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+#    th {
+#        background-color: #f2f2f2;
+#    }
+
+    .desc {
+        font-style: italic;
+         font-weight: bold; /* Añadir negrita */
+    }
+</style>
+<table>
+    <thead>
+        <tr>
+            <th>Tools</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="desc">{{ report.report }}</td>
+        </tr>
+    </tbody>
+</table>
+
+    <br>
+    <br>
+    <br>
+
 
 	<head>
 		<link rel="stylesheet" href="{%static 'report.css'%}">
@@ -13,8 +51,8 @@
 	<body>
 		<object class="pdfview" type="application/pdf"
 			data="{% static 'portfolio/'%}{{report.description}}.pdf"></object>
+
 	</body>
 
 </div>
-{% endwith %}
 {%endblock%}

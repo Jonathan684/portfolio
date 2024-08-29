@@ -1,10 +1,48 @@
 {%extends 'layout.html'%}
 {%block content%}
+<style>
+h2 {
+    text-align: center; /* Alinea el texto al centro */
+  }
+  h3 {
+    text-align: left; /* Alinea el texto al centro */
+  }
+  p {
+    text-align: left;
+  }
+  table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Sombra con color blanco */
+    border-radius: 8px;
+    overflow: hidden;
+  }
 
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #333; /* Borde más oscuro */
+  }
+
+  th {
+    background-color: #007bff;
+    color: white;
+  }
+
+  tr:nth-child(even) {
+    background-color: #444; /* Color de fondo para filas pares */
+  }
+
+</style>
+<div>
+    <h2 >{{post.title}}</h2>
+    <h3 >Important</h3>
+</div>
 <div class="text-center">
-    <h2>{{post.title}}</h2>
-    <h3 class="my-2 h5 text-muted">{{post.date|date:'F jS Y'}}</h3>
-    <img src="{{post.image.url}}" alt="{{post.title}}" class="img-fluid">
+
+    <!--<h3 class="my-2 h5 text-muted">{{post.date|date:'F jS Y'}}</h3>
+    <img src="{{post.image.url}}" alt="{{post.title}}" class="img-fluid">-->
     <div class="my-4">
         <p>{{post.description|safe}}</p>
     </div>

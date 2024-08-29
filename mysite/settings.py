@@ -65,6 +65,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries': {
+                'file_exists': 'mysite.file_exists',  # Change 'yourapp' to the name of your Django app
+            },
         },
     },
 ]
